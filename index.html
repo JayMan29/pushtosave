@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Push to Save – Hands-Only CPR Campaign</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: #fff;
+            color: #222;
+        }
+        header {
+            background: #D72631;
+            color: #fff;
+            padding: 30px 0 20px 0;
+            text-align: center;
+        }
+        nav {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 8px #ddd;
+        }
+        nav a {
+            text-decoration: none;
+            color: #D72631;
+            padding: 18px 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            background: #D72631;
+            color: #fff;
+            border-radius: 18px 18px 0 0;
+        }
+        main {
+            max-width: 850px;
+            margin: 40px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px #eee;
+            padding: 40px 28px;
+        }
+        h1, h2, h3 {
+            color: #D72631;
+        }
+        section {
+            margin-bottom: 36px;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .hero img {
+            width: 220px;
+            border-radius: 15px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin: 20px 0;
+        }
+        .stat {
+            background: #fff0f0;
+            border-left: 6px solid #D72631;
+            padding: 18px;
+            border-radius: 14px;
+            font-size: 1.1em;
+        }
+        .chapter-list {
+            list-style: disc inside;
+            padding-left: 15px;
+        }
+        .contact {
+            background: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 16px;
+            color: #fff;
+            background: #D72631;
+            margin-top: 60px;
+            font-size: 0.98em;
+        }
+        @media (max-width: 600px) {
+            .hero { flex-direction: column; }
+            main { padding: 20px 6px; }
+        }
+    </style>
+    <script>
+        function showPage(page) {
+            // Hide all
+            document.querySelectorAll("section").forEach(sec => sec.style.display = 'none');
+            document.getElementById(page).style.display = 'block';
+            // Set nav active
+            document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+            document.getElementById('nav-' + page).classList.add("active");
+            window.scrollTo(0, 0);
+        }
+        window.onload = function() {
+            showPage('home');
+        };
+    </script>
+</head>
+<body>
+<header>
+    <h1>Push to Save</h1>
+    <h2>Hands-Only CPR Campaign</h2>
+    <p><strong>Our mission:</strong> Teach hands-only CPR, empower communities, and save lives—focusing on vulnerable populations.</p>
+</header>
+<nav>
+    <a href="#" id="nav-home" onclick="showPage('home');return false;">Home</a>
+    <a href="#" id="nav-about" onclick="showPage('about');return false;">About</a>
+    <a href="#" id="nav-statistics" onclick="showPage('statistics');return false;">Statistics</a>
+    <a href="#" id="nav-chapters" onclick="showPage('chapters');return false;">Chapters</a>
+    <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
+</nav>
+<main>
+    <!-- HOME -->
+    <section id="home">
+        <div class="hero">
+            <div>
+                <h2>Why Hands-Only CPR?</h2>
+                <p>
+                    Immediate chest compressions can double or triple a person’s chance of surviving cardiac arrest. You don’t need special equipment or even mouth-to-mouth—just your hands and the courage to act!
+                </p>
+                <ul>
+                    <li>Anyone can learn hands-only CPR in minutes</li>
+                    <li>Most cardiac arrests happen at home or in public spaces</li>
+                    <li>Your actions can save someone you love</li>
+                </ul>
+            </div>
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="CPR Chest Compressions">
+        </div>
+    </section>
+    <!-- ABOUT -->
+    <section id="about" style="display:none;">
+        <h2>About Push to Save</h2>
+        <p>
+            <strong>Push to Save</strong> is a student-led initiative founded by <b>Leena Manadan</b> to make lifesaving CPR skills accessible to all. Our campaign targets vulnerable communities with little access to health education, empowering every person to become a hero.
+        </p>
+        <ul>
+            <li>Free hands-only CPR training sessions</li>
+            <li>Events at schools, community centers, and local organizations</li>
+            <li>Outreach in multiple languages</li>
+            <li>Partnerships with health advocates & first responders</li>
+        </ul>
+        <img src="https://cdn.pixabay.com/photo/2016/11/23/15/41/cpr-1850130_1280.jpg" alt="Teaching CPR" style="width:100%;max-width:440px;display:block;margin:18px auto;border-radius:13px;">
+    </section>
+    <!-- STATISTICS -->
+    <section id="statistics" style="display:none;">
+        <h2>Statistics</h2>
+        <div class="stats-grid">
+            <div class="stat">
+                <b>350,000+</b><br>
+                Out-of-hospital cardiac arrests occur every year in the U.S.
+            </div>
+            <div class="stat">
+                <b>90%</b><br>
+                of people who experience cardiac arrest outside a hospital die.
+            </div>
+            <div class="stat">
+                <b>2-3x</b><br>
+                Bystander CPR can double or triple survival chances.
+            </div>
+            <div class="stat">
+                <b>70%</b><br>
+                of cardiac arrests happen at home—your loved one could need your help!
+            </div>
+            <div class="stat">
+                <b>60%+</b><br>
+                of Americans say they don't know what to do in a cardiac emergency.<br>
+                <small>(Source: AHA, CDC, 2023)</small>
+            </div>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2017/01/10/17/26/heart-1966105_1280.png" alt="CPR Heartbeat" style="display:block;margin:20px auto;width:90px;">
+    </section>
+    <!-- CHAPTERS -->
+    <section id="chapters" style="display:none;">
+        <h2>Chapters</h2>
+        <p>Want to start a <strong>Push to Save</strong> chapter in your school, college, or community? We’ll help you get started!</p>
+        <ul class="chapter-list">
+            <li>Chicago, IL – Whitney Young Magnet High School (Flagship Chapter)</li>
+            <li>Swarthmore College – PA</li>
+            <li>Pilsen Community Center – IL</li>
+            <li>Your school or club—<b>Start a chapter!</b></li>
+        </ul>
+        <p style="margin-top:18px;">
+            <b>How to start:</b> Email us with your name, location, and why you want to bring CPR education to your community!
+        </p>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact" style="display:none;">
+        <h2>Contact</h2>
+        <div class="contact">
+            <p>
+                <b>Founder & Leader:</b> Leena Manadan<br>
+                <b>Email:</b> <a href="mailto:jmanada1@swarthmore.edu">jmanada1@swarthmore.edu</a><br>
+                <b>Instagram:</b> <a href="https://instagram.com/pushtosave" target="_blank">@pushtosave</a>
+            </p>
+            <p>
+                Want to host a free training, partner with us, or start a chapter? Reach out—we’d love to work with you!
+            </p>
+        </div>
+    </section>
+</main>
+<footer>
+    &copy; 2025 Push to Save – Hands-Only CPR Campaign. All rights reserved.
+</footer>
+</body>
+</html>
