@@ -14,25 +14,24 @@
         header {
             background: #D72631;
             color: #fff;
-            padding: 20px 0 14px 0;
+            padding: 24px 0 16px 0;
             text-align: center;
             position: relative;
         }
         .logo-cpr {
-            width: 68px;
-            height: 68px;
+            width: 82px;
+            height: 82px;
             border-radius: 50%;
             background: #fff;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 8px #d7263125;
-            margin-bottom: 10px;
-            margin-right: 14px;
+            margin: 0 auto 14px auto;
         }
         .logo-cpr svg {
-            width: 38px;
-            height: 38px;
+            width: 48px;
+            height: 48px;
             display: block;
         }
         .header-content {
@@ -40,6 +39,16 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+        h1 {
+            margin: 8px 0 4px 0;
+            font-size: 2.8em;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        h2 {
+            margin: 0 0 6px 0;
+            color: #fff;
         }
         nav {
             background: #fff;
@@ -53,6 +62,7 @@
             padding: 18px 28px;
             font-weight: bold;
             letter-spacing: 1px;
+            font-size: 1.09em;
             transition: background 0.3s, color 0.3s;
         }
         nav a:hover, nav a.active {
@@ -61,71 +71,88 @@
             border-radius: 18px 18px 0 0;
         }
         main {
-            max-width: 850px;
+            max-width: 950px;
             margin: 40px auto 0 auto;
             background: #fff;
             border-radius: 18px;
             box-shadow: 0 8px 24px #eee;
-            padding: 40px 28px;
+            padding: 44px 6vw 48px 6vw;
         }
-        h1, h2, h3 {
-            color: #D72631;
-        }
-        section {
-            margin-bottom: 36px;
-        }
+        h3 { color: #D72631; }
+        section { margin-bottom: 42px; }
         .hero {
             display: flex;
             align-items: center;
-            gap: 30px;
+            justify-content: center;
+            gap: 36px;
             flex-wrap: wrap;
         }
+        .hero-text {
+            flex: 1 1 300px;
+            min-width: 260px;
+            max-width: 440px;
+        }
         .hero img {
-            width: 220px;
-            border-radius: 15px;
+            display: block;
+            width: 370px;
+            max-width: 95vw;
+            height: auto;
+            border-radius: 22px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px #ffd3d36e;
+        }
+        .big-centered-img {
+            display: block;
+            margin: 28px auto 0 auto;
+            max-width: 98vw;
+            width: 520px;
+            border-radius: 22px;
+            box-shadow: 0 4px 18px #ffd3d355;
         }
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 30px 0 10px 0;
         }
         .stat {
             background: #fff0f0;
-            border-left: 6px solid #D72631;
-            padding: 18px;
-            border-radius: 14px;
-            font-size: 1.1em;
+            border-left: 7px solid #D72631;
+            padding: 24px 18px;
+            border-radius: 16px;
+            font-size: 1.18em;
+            min-height: 98px;
+            box-shadow: 0 2px 10px #f9e3e355;
         }
         .chapter-list {
             list-style: disc inside;
-            padding-left: 15px;
+            padding-left: 18px;
+            margin-bottom: 8px;
         }
         .contact {
             background: #f7f7f7;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 28px;
+            border-radius: 14px;
+            text-align: center;
         }
         footer {
             text-align: center;
-            padding: 16px;
+            padding: 18px;
             color: #fff;
             background: #D72631;
             margin-top: 60px;
-            font-size: 0.98em;
+            font-size: 1em;
         }
-        @media (max-width: 600px) {
-            .hero { flex-direction: column; }
-            main { padding: 20px 6px; }
-            .header-content { flex-direction: column; }
+        @media (max-width: 700px) {
+            main { padding: 18px 1vw 22px 1vw; }
+            .hero { flex-direction: column; gap: 22px;}
+            .hero img, .big-centered-img { width: 97vw; max-width: 99vw; }
         }
     </style>
     <script>
         function showPage(page) {
-            // Hide all
             document.querySelectorAll("section").forEach(sec => sec.style.display = 'none');
             document.getElementById(page).style.display = 'block';
-            // Set nav active
             document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
             document.getElementById('nav-' + page).classList.add("active");
             window.scrollTo(0, 0);
@@ -139,17 +166,15 @@
 <header>
     <div class="header-content">
         <span class="logo-cpr">
-            <!-- Simple flat CPR/heart hands logo (SVG, fast load, works anywhere) -->
+            <!-- Flat CPR/heart hands logo SVG -->
             <svg viewBox="0 0 64 64" fill="none">
                 <circle cx="32" cy="32" r="31" stroke="#D72631" stroke-width="3" fill="#fff"/>
                 <path d="M32 49s13.5-10 13.5-18.2C45.5 25.3 41.1 22 36.6 22c-2.2 0-4.1 1-5.6 2.5C29.5 23 27.6 22 25.4 22 20.9 22 16.5 25.3 16.5 30.8c0 8.2 13.5 18.2 13.5 18.2z" fill="#D72631" stroke="#fff" stroke-width="2.5"/>
             </svg>
         </span>
-        <div>
-            <h1 style="margin-bottom: 7px;">Push to Save</h1>
-            <h2 style="margin-top:0;">Hands-Only CPR Campaign</h2>
-            <p style="margin-top:8px;"><strong>Our mission:</strong> Teach hands-only CPR, empower communities, and save lives—focusing on vulnerable populations.</p>
-        </div>
+        <h1>Push to Save</h1>
+        <h2>Hands-Only CPR Campaign</h2>
+        <p style="margin-top:10px;font-size:1.18em;max-width:660px;"><strong>Our mission:</strong> Teach hands-only CPR, empower communities, and save lives—focusing on vulnerable populations.</p>
     </div>
 </header>
 <nav>
@@ -163,7 +188,7 @@
     <!-- HOME -->
     <section id="home">
         <div class="hero">
-            <div>
+            <div class="hero-text">
                 <h2>Why Hands-Only CPR?</h2>
                 <p>
                     Immediate chest compressions can double or triple a person’s chance of surviving cardiac arrest. You don’t need special equipment or even mouth-to-mouth—just your hands and the courage to act!
@@ -174,7 +199,7 @@
                     <li>Your actions can save someone you love</li>
                 </ul>
             </div>
-            <img src="https://media.istockphoto.com/id/1202967048/photo/young-business-man-hand-pump-on-chest-for-first-aid-emergency-cpr.jpg?s=612x612&w=0&k=20&c=NdLpkrZVAucCy1-emVyPBPmbNJYt7-SZwObTGlo3bJ8=" alt="CPR Chest Compressions">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80" alt="CPR Chest Compressions">
         </div>
     </section>
     <!-- ABOUT -->
@@ -189,7 +214,7 @@
             <li>Outreach in multiple languages</li>
             <li>Partnerships with health advocates & first responders</li>
         </ul>
-        <img src="https://cprcare.com/wp-content/uploads/2021/08/how-to-become-a-cpr-instructor-online-now.png" alt="Teaching CPR" style="width:100%;max-width:440px;display:block;margin:18px auto;border-radius:13px;">
+        <img src="https://cdn.pixabay.com/photo/2016/11/23/15/41/cpr-1850130_1280.jpg" alt="Teaching CPR" class="big-centered-img">
     </section>
     <!-- STATISTICS -->
     <section id="statistics" style="display:none;">
@@ -217,7 +242,7 @@
                 <small>(Source: AHA, CDC, 2023)</small>
             </div>
         </div>
-        <img src="https://www.safetyandhealthmagazine.com/ext/resources/images/news/first-aid/red-heart-beat.jpg?t=1733852076&width=768" alt="CPR Heartbeat" style="display:block;margin:20px auto;width:90px;">
+        <img src="https://cdn.pixabay.com/photo/2017/01/10/17/26/heart-1966105_1280.png" alt="CPR Heartbeat" class="big-centered-img" style="width:180px;max-width:88vw;">
     </section>
     <!-- CHAPTERS -->
     <section id="chapters" style="display:none;">
@@ -238,7 +263,7 @@
         <h2>Contact</h2>
         <div class="contact">
             <p>
-                <b>Founder & Leader:</b> Jay Manadan<br>
+                <b>Founder & Leader:</b> Leena Manadan<br>
                 <b>Email:</b> <a href="mailto:jmanada1@swarthmore.edu">jmanada1@swarthmore.edu</a><br>
                 <b>Instagram:</b> <a href="https://instagram.com/pushtosave" target="_blank">@pushtosave</a>
             </p>
