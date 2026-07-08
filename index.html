@@ -1,297 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Push to Save – Hands-Only CPR Campaign</title>
-    <link rel="icon" href="https://github.com/JayMan29/pushtosave/blob/main/Push%20To%20Save%20.png?raw=true" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            background: #fff;
-            color: #222;
-        }
-        header {
-            background: #D72631;
-            color: #fff;
-            padding: 24px 0 16px 0;
-            text-align: center;
-            position: relative;
-        }
-        .logo-cpr {
-            width: 82px;
-            height: 82px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px #d7263125;
-            margin: 0 auto 14px auto;
-        }
-        .logo-cpr svg {
-            width: 48px;
-            height: 48px;
-            display: block;
-        }
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        h1 {
-            margin: 8px 0 4px 0;
-            font-size: 2.8em;
-            color: #fff;
-            letter-spacing: 2px;
-        }
-        h2 {
-            margin: 0 0 6px 0;
-            color: #fff;
-        }
-        nav {
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            box-shadow: 0 2px 8px #ddd;
-        }
-        nav a {
-            text-decoration: none;
-            color: #D72631;
-            padding: 18px 28px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            font-size: 1.09em;
-            transition: background 0.3s, color 0.3s;
-        }
-        nav a:hover, nav a.active {
-            background: #D72631;
-            color: #fff;
-            border-radius: 18px 18px 0 0;
-        }
-        main {
-            max-width: 950px;
-            margin: 40px auto 0 auto;
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 8px 24px #eee;
-            padding: 44px 6vw 48px 6vw;
-        }
-        h3 { color: #D72631; }
-        section { margin-bottom: 42px; }
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 36px;
-            flex-wrap: wrap;
-        }
-        .hero-text {
-            flex: 1 1 300px;
-            min-width: 260px;
-            max-width: 440px;
-        }
-        .hero img {
-            display: block;
-            width: 370px;
-            max-width: 95vw;
-            height: auto;
-            border-radius: 22px;
-            margin: 0 auto;
-            box-shadow: 0 4px 20px #ffd3d36e;
-        }
-        .big-centered-img {
-            display: block;
-            margin: 28px auto 0 auto;
-            max-width: 98vw;
-            width: 520px;
-            border-radius: 22px;
-            box-shadow: 0 4px 18px #ffd3d355;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin: 30px 0 10px 0;
-        }
-        .stat {
-            background: #fff0f0;
-            border-left: 7px solid #D72631;
-            padding: 24px 18px;
-            border-radius: 16px;
-            font-size: 1.18em;
-            min-height: 98px;
-            box-shadow: 0 2px 10px #f9e3e355;
-        }
-        .chapter-list {
-            list-style: disc inside;
-            padding-left: 18px;
-            margin-bottom: 8px;
-        }
-        .contact {
-            background: #f7f7f7;
-            padding: 28px;
-            border-radius: 14px;
-            text-align: center;
-        }
-        footer {
-            text-align: center;
-            padding: 18px;
-            color: #fff;
-            background: #D72631;
-            margin-top: 60px;
-            font-size: 1em;
-        }
-        @media (max-width: 700px) {
-            main { padding: 18px 1vw 22px 1vw; }
-            .hero { flex-direction: column; gap: 22px;}
-            .hero img, .big-centered-img { width: 97vw; max-width: 99vw; }
-        }
-    </style>
-    <script>
-        function showPage(page) {
-            document.querySelectorAll("section").forEach(sec => sec.style.display = 'none');
-            document.getElementById(page).style.display = 'block';
-            document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
-            document.getElementById('nav-' + page).classList.add("active");
-            window.scrollTo(0, 0);
-        }
-        window.onload = function() {
-            showPage('home');
-        };
-    </script>
+<meta charset="UTF-8">
+<title>Push to Save – Hands-Only CPR Campaign</title>
+<link rel="icon" href="https://github.com/JayMan29/pushtosave/blob/main/Push%20To%20Save%20.png?raw=true" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF9F5;
+    --ink:#14213D;
+    --ink-soft:#4A5578;
+    --red:#E63946;
+    --red-dark:#B5121B;
+    --pulse:#1FAE9A;
+    --pulse-glow:#2EC4B6;
+    --monitor:#0B1220;
+    --monitor-line:#1C2740;
+    --line:#E7E2D8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',Arial,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  /* ---------- signature pulse-line motif ---------- */
+  .pulse-divider{
+    width:100%;
+    height:34px;
+    display:block;
+    overflow:hidden;
+  }
+  .pulse-divider svg{width:100%;height:100%;display:block;}
+  .pulse-path{
+    fill:none;
+    stroke:var(--pulse);
+    stroke-width:2.4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:600;
+    stroke-dashoffset:600;
+    animation:draw-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes draw-pulse{
+    0%{stroke-dashoffset:600;}
+    45%{stroke-dashoffset:0;}
+    70%{stroke-dashoffset:0;}
+    100%{stroke-dashoffset:-600;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pulse-path{animation:none;stroke-dashoffset:0;}
+  }
+
+  /* ---------- header ---------- */
+  header{
+    background:var(--ink);
+    color:#fff;
+    padding:38px 20px 0 20px;
+    text-align:center;
+  }
+  .brand-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .logo-cpr{
+    width:58px;height:58px;border-radius:50%;
+    background:#fff;
+    display:flex;align-items:center;justify-content:center;
+    flex:none;
+  }
+  .logo-cpr svg{width:34px;height:34px;display:block;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:.14em;
+    font-size:.78em;
+    color:var(--pulse-glow);
+    text-transform:uppercase;
+    margin:0 0 6px 0;
+  }
+  h1{
+    margin:6px 0 2px 0;
+    font-family:'Archivo Black',Arial,sans-serif;
+    font-size:clamp(2.4em,6vw,3.6em);
+    letter-spacing:1px;
+    line-height:1;
+  }
+  header h2{
+    margin:8px 0 22px 0;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:500;
+    font-size:1.35em;
+    color:#C7CEEA;
+    letter-spacing:.5px;
+  }
+  header .pulse-divider{max-width:640px;margin:0 auto;}
+
+  /* ---------- nav ---------- */
+  nav{
+    background:var(--paper);
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    flex-wrap:wrap;
+    padding:14px 10px;
+    position:sticky;
+    top:0;
+    z-index:20;
+    border-bottom:1px solid var(--line);
+  }
+  nav a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    padding:9px 20px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;
+    font-size:1.12em;
+    letter-spacing:.5px;
+    border-radius:999px;
+    transition:background .2s, color .2s;
+  }
+  nav a:hover{background:#F1EEE6;color:var(--ink);}
+  nav a.active{background:var(--red);color:#fff;}
+
+  main{
+    max-width:1040px;
+    margin:0 auto;
+    padding:48px 6vw 60px 6vw;
+  }
+  section{margin-bottom:10px;}
+
+  .kicker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.78em;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--red);
+    margin:0 0 8px 0;
+  }
+  h3{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    font-size:2em;
+    color:var(--ink);
+    margin:0 0 14px 0;
+  }
+  section h2{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    font-size:2.2em;
+    margin:0 0 4px 0;
+  }
+  p, li{
+    font-size:1.05em;
+    line-height:1.65;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- home / hero ---------- */
+  .hero{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:44px;
+    align-items:center;
+  }
+  .hero-text ul{padding-left:20px;margin:14px 0 20px 0;}
+  .hero-text li{margin-bottom:6px;}
+
+  .cta-btn{
+    display:inline-block;
+    background:var(--red);
+    color:#fff !important;
+    font-weight:700;
+    text-decoration:none;
+    padding:13px 26px;
+    border-radius:8px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:1.15em;
+    letter-spacing:.4px;
+    margin-top:6px;
+    transition:background .2s, transform .2s;
+  }
+  .cta-btn:hover{background:var(--red-dark);transform:translateY(-1px);}
+
+  .bpm-tag{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:22px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.85em;
+    color:var(--ink-soft);
+  }
+  .bpm-tag b{
+    color:var(--pulse);
+    font-size:1.3em;
+  }
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+  .gallery img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(20,33,61,0.14);
+  }
+  .gallery img:nth-child(1){grid-column:1/3;height:190px;}
+
+  /* ---------- about ---------- */
+  .about-body{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:40px;
+    align-items:center;
+  }
+  .about-list{
+    list-style:none;
+    padding:0;
+    margin:18px 0;
+  }
+  .about-list li{
+    padding:10px 0 10px 30px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+  }
+  .about-list li:last-child{border-bottom:none;}
+  .about-list li::before{
+    content:"+";
+    position:absolute;
+    left:0;
+    color:var(--red);
+    font-weight:700;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .about-body img{
+    width:100%;
+    border-radius:14px;
+    box-shadow:0 10px 26px rgba(20,33,61,0.16);
+  }
+
+  /* ---------- statistics: monitor panel ---------- */
+  .monitor{
+    background:var(--monitor);
+    border-radius:18px;
+    padding:34px 30px;
+    margin-top:18px;
+  }
+  .monitor-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--pulse-glow);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.82em;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .monitor-head .dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--pulse-glow);
+    box-shadow:0 0 8px var(--pulse-glow);
+  }
+  .vitals-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1px;
+    background:var(--monitor-line);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .vital{
+    background:var(--monitor);
+    padding:22px 20px;
+  }
+  .vital .num{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:2em;
+    color:var(--pulse-glow);
+    line-height:1;
+  }
+  .vital .label{
+    color:#9AA6C7;
+    font-size:.92em;
+    margin-top:8px;
+    line-height:1.5;
+  }
+  .vital small{color:#5C6784;}
+
+  /* ---------- chapters ---------- */
+  .chapter-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:14px;
+    margin:22px 0 28px 0;
+  }
+  .chapter-card{
+    border:1px solid var(--line);
+    border-left:4px solid var(--red);
+    border-radius:10px;
+    padding:18px 20px;
+    background:#fff;
+  }
+  .chapter-card .school{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;
+    font-size:1.2em;
+    display:block;
+    margin-bottom:4px;
+  }
+  .chapter-card a{
+    color:var(--red);
+    text-decoration:none;
+    font-size:.95em;
+    font-weight:600;
+  }
+  .chapter-card a:hover{text-decoration:underline;}
+  .start-box{
+    background:#F1EEE6;
+    border-radius:12px;
+    padding:22px 24px;
+  }
+
+  /* ---------- contact ---------- */
+  .contact{
+    background:var(--ink);
+    color:#fff;
+    padding:38px 30px;
+    border-radius:18px;
+    text-align:center;
+  }
+  .contact p{color:#C7CEEA;}
+  .contact b{color:#fff;}
+  .contact a{color:var(--pulse-glow);text-decoration:none;font-weight:600;}
+  .contact a:hover{text-decoration:underline;}
+  .contact-photo{
+    width:280px;
+    max-width:70vw;
+    display:block;
+    margin:24px auto 0 auto;
+    border-radius:14px;
+    box-shadow:0 10px 26px rgba(0,0,0,0.28);
+  }
+
+  footer{
+    text-align:center;
+    padding:26px 20px 32px 20px;
+    color:var(--ink-soft);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.82em;
+  }
+
+  @media (max-width:760px){
+    .hero, .about-body{grid-template-columns:1fr;}
+    .gallery{order:-1;}
+    main{padding:36px 5vw 50px 5vw;}
+  }
+</style>
+<script>
+  function showPage(page){
+    document.querySelectorAll("main > section").forEach(sec => sec.style.display='none');
+    document.getElementById(page).style.display='block';
+    document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+    document.getElementById('nav-'+page).classList.add("active");
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  window.onload = function(){ showPage('home'); };
+</script>
 </head>
 <body>
+
 <header>
-    <div class="header-content">
-        <span class="logo-cpr">
-            <!-- Flat CPR/heart hands logo SVG -->
-            <svg viewBox="0 0 64 64" fill="none">
-                <circle cx="32" cy="32" r="31" stroke="#D72631" stroke-width="3" fill="#fff"/>
-                <path d="M32 49s13.5-10 13.5-18.2C45.5 25.3 41.1 22 36.6 22c-2.2 0-4.1 1-5.6 2.5C29.5 23 27.6 22 25.4 22 20.9 22 16.5 25.3 16.5 30.8c0 8.2 13.5 18.2 13.5 18.2z" fill="#D72631" stroke="#fff" stroke-width="2.5"/>
-            </svg>
-        </span>
-        <h1>Push to Save</h1>
-        <h2>Hands-Only CPR Campaign</h2>
+  <div class="brand-row">
+    <span class="logo-cpr">
+      <svg viewBox="0 0 64 64" fill="none">
+        <path d="M32 49s13.5-10 13.5-18.2C45.5 25.3 41.1 22 36.6 22c-2.2 0-4.1 1-5.6 2.5C29.5 23 27.6 22 25.4 22 20.9 22 16.5 25.3 16.5 30.8c0 8.2 13.5 18.2 13.5 18.2z" fill="#D72631"/>
+      </svg>
+    </span>
+    <div style="text-align:left;">
+      <p class="eyebrow">Student-led · Hands-only CPR</p>
+      <h1 style="margin:0;">Push to Save</h1>
     </div>
+  </div>
+  <h2>Two hands. One rhythm. A second chance.</h2>
+  <div class="pulse-divider">
+    <svg viewBox="0 0 600 34" preserveAspectRatio="none">
+      <path class="pulse-path" d="M0,17 L150,17 L170,4 L190,30 L210,17 L250,17 L270,17 L290,2 L300,32 L320,17 L600,17"/>
+    </svg>
+  </div>
 </header>
+
 <nav>
-    <a href="#" id="nav-home" onclick="showPage('home');return false;">Home</a>
-    <a href="#" id="nav-about" onclick="showPage('about');return false;">About</a>
-    <a href="#" id="nav-statistics" onclick="showPage('statistics');return false;">Statistics</a>
-    <a href="#" id="nav-chapters" onclick="showPage('chapters');return false;">Chapters</a>
-    <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
+  <a href="#" id="nav-home" onclick="showPage('home');return false;">Home</a>
+  <a href="#" id="nav-about" onclick="showPage('about');return false;">About</a>
+  <a href="#" id="nav-statistics" onclick="showPage('statistics');return false;">Statistics</a>
+  <a href="#" id="nav-chapters" onclick="showPage('chapters');return false;">Chapters</a>
+  <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
 </nav>
+
 <main>
-    <!-- HOME -->
-    <section id="home">
-        <div class="hero">
-            <div class="hero-text">
-                <h3>Why Hands-Only CPR?</h3>
-                <p>
-                    Immediate chest compressions can double or triple a person’s chance of surviving cardiac arrest. You don’t need special equipment or even mouth-to-mouth—just your hands and the courage to act!
-                </p>
-                <ul>
-                    <li>Anyone can learn hands-only CPR in minutes</li>
-                    <li>Most cardiac arrests happen at home or in public spaces</li>
-                    <li>Your actions can save someone you love</li>
-                </ul>
-                 <p>
-                 Email <a href="mailto:jmanada1@swarthmore.edu">jmanada1@swarthmore.edu</a> to host or attend a free <strong>Push to Save</strong> CPR training session.  
-                 </p>
-            </div>
-            <img src="https://github.com/JayMan29/pushtosave/blob/main/Jay%20Manadan%20Hands-Only%20CPR.png?raw=true" alt="Jay Manadan">
-            <img src="https://github.com/JayMan29/pushtosave/blob/main/Abdon%20Valenciana%20and%20Jay%20Manadan.jpg?raw=true" alt="Jay Manadan and Abdon Valenciana">
-            <img src="https://github.com/JayMan29/pushtosave/blob/main/Vinay%20Patel.jpg?raw=true" alt="Vinay Patel">
-            <img src="https://github.com/JayMan29/pushtosave/blob/main/Jay%20Manadan%20CPR.png?raw=true" alt="Jay Manadan">
-            <img src="https://github.com/JayMan29/pushtosave/blob/main/Vinay%20Patel%20and%20Jay%20Manadan.png?raw=true" alt="Vinay Patel and Jay Manadan">
 
-
-        </div>
-    </section>
-    <!-- ABOUT -->
-    <section id="about" style="display:none;">
-        <h2>About Push to Save</h2>
+  <!-- HOME -->
+  <section id="home">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="kicker">Why hands-only CPR</p>
+        <h3>Anyone can be the reason someone survives.</h3>
         <p>
-            <strong>Push to Save</strong> is a student-led initiative to teach lifesaving CPR skills and make them accessible. Our campaign targets vulnerable communities, empowering every person to become a hero.
+          Immediate chest compressions can double or triple a person's chance of surviving cardiac arrest.
+          You don't need special equipment or even mouth-to-mouth — just your hands and the courage to act.
         </p>
         <ul>
-            <li>Free hands-only CPR training sessions</li>
-            <li>Events at schools, community centers, and local organizations</li>
-            <li>Outreach in multiple languages</li>
-            <li>Partnerships with health advocates & first responders</li>
+          <li>Anyone can learn hands-only CPR in minutes</li>
+          <li>Most cardiac arrests happen at home or in public spaces</li>
+          <li>Your actions can save someone you love</li>
+        </ul>
+        <a class="cta-btn" href="mailto:jmanada1@swarthmore.edu">Book a free training session</a>
+        <div class="bpm-tag"><b>100–120</b> compressions per minute — the pace that keeps blood moving</div>
+      </div>
+      <div class="gallery">
+        <img src="https://github.com/JayMan29/pushtosave/blob/main/Jay%20Manadan%20Hands-Only%20CPR.png?raw=true" alt="Jay Manadan">
+        <img src="https://github.com/JayMan29/pushtosave/blob/main/Abdon%20Valenciana%20and%20Jay%20Manadan.jpg?raw=true" alt="Jay Manadan and Abdon Valenciana">
+        <img src="https://github.com/JayMan29/pushtosave/blob/main/Vinay%20Patel.jpg?raw=true" alt="Vinay Patel">
+        <img src="https://github.com/JayMan29/pushtosave/blob/main/Jay%20Manadan%20CPR.png?raw=true" alt="Jay Manadan">
+        <img src="https://github.com/JayMan29/pushtosave/blob/main/Vinay%20Patel%20and%20Jay%20Manadan.png?raw=true" alt="Vinay Patel and Jay Manadan">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="display:none;">
+    <p class="kicker">Our mission</p>
+    <h2>About Push to Save</h2>
+    <div class="about-body">
+      <div>
         <p>
-            Email <a href="mailto:jmanada1@swarthmore.edu">jmanada1@swarthmore.edu</a> to host or attend a free <strong>Push to Save</strong> CPR training session.  
+          <strong>Push to Save</strong> is a student-led initiative to teach lifesaving CPR skills and make them
+          accessible. Our campaign targets vulnerable communities, empowering every person to become a hero.
         </p>
+        <ul class="about-list">
+          <li>Free hands-only CPR training sessions</li>
+          <li>Events at schools, community centers, and local organizations</li>
+          <li>Outreach in multiple languages</li>
+          <li>Partnerships with health advocates &amp; first responders</li>
         </ul>
-        <img src="https://github.com/JayMan29/pushtosave/blob/main/Jay%20Manadan%20Teaching%20CPR.png?raw=true" alt="Jay Manadan" class="big-centered-img">
-    </section>
-    <!-- STATISTICS -->
-    <section id="statistics" style="display:none;">
-        <h2>Statistics</h2>
-        <div class="stats-grid">
-            <div class="stat">
-                <b>350,000+</b><br>
-                Out-of-hospital cardiac arrests occur every year in the U.S.
-            </div>
-            <div class="stat">
-                <b>90%</b><br>
-                of people who experience cardiac arrest outside a hospital die.
-            </div>
-            <div class="stat">
-                <b>2-3x</b><br>
-                Bystander CPR can double or triple survival chances.
-            </div>
-            <div class="stat">
-                <b>70%</b><br>
-                of cardiac arrests happen at home—your loved one could need your help!
-            </div>
-            <div class="stat">
-                <b>60%+</b><br>
-                of Americans say they don't know what to do in a cardiac emergency.<br>
-                <small>(Source: AHA, CDC, 2023)</small>
-            </div>
-             <div class="stat">
-                <b>330+</b><br>
-                people trained in Hands-Only CPR by the <strong>Push to Save</strong> initiative.<br>
-            </div>
-        </div>
-       
-    </section>
-    <!-- CHAPTERS -->
-    <section id="chapters" style="display:none;">
-        <h2>Chapters</h2>
-        <p>Want to start a <strong>Push to Save</strong> chapter in your school, college, or community? We’ll help you get started!</p>
-        <ul class="chapter-list">
-            <li>Whitney Young Magnet High School - <a href="mailto:lmanadan@cps.edu">Leena Manadan</a> </li>
-            <li>Swarthmore College - <a href="mailto:jmanada1@swarthmore.edu">Jay Manadan</a></li>
-            <li>The University of Chicago - <a href="mailto:abdonv@uchicago.edu">Abdon Valenciana</a> </li>
-            <li>Your school or club—<b>Start a chapter!</b></li>
-        </ul>
-        <p style="margin-top:18px;">
-            <b>How to start:</b> Email us with your name, location, and why you want to bring lifesaving CPR education to your community!
+        <p>
+          Email <a href="mailto:jmanada1@swarthmore.edu">jmanada1@swarthmore.edu</a> to host or attend a free
+          <strong>Push to Save</strong> CPR training session.
         </p>
-    </section>
-    <!-- CONTACT -->
-    <section id="contact" style="display:none;">
-        <h2>Contact</h2>
-        <div class="contact">
-            <p>
-                <b>Founder & Leader:</b> Jay Manadan<br>
-                <b>Email:</b> <a href="mailto:jmanada1@swarthmore.edu">jmanada1@swarthmore.edu</a><br>
-                <b>Instagram:</b> <a href="https://www.instagram.com/push.tosave/?hl=en" target="_blank">@push.tosave</a>
-            </p>
-            <p>
-                Want to host a free training, partner with us, or start a chapter? Reach out—we’d love to work with you!
-            </p>
+      </div>
+      <img src="https://github.com/JayMan29/pushtosave/blob/main/Jay%20Manadan%20Teaching%20CPR.png?raw=true" alt="Jay Manadan teaching CPR">
+    </div>
+  </section>
+
+  <!-- STATISTICS -->
+  <section id="statistics" style="display:none;">
+    <p class="kicker">By the numbers</p>
+    <h2>Statistics</h2>
+    <div class="monitor">
+      <div class="monitor-head"><span class="dot"></span> Live vitals — why this campaign exists</div>
+      <div class="vitals-grid">
+        <div class="vital">
+          <div class="num">350,000+</div>
+          <div class="label">Out-of-hospital cardiac arrests occur every year in the U.S.</div>
         </div>
- <img src="https://github.com/JayMan29/pushtosave/blob/main/Leena%20Manadan.png?raw=true" class="big-centered-img" alt="Leena Manadan">
-    </section>
+        <div class="vital">
+          <div class="num">90%</div>
+          <div class="label">of people who experience cardiac arrest outside a hospital die.</div>
+        </div>
+        <div class="vital">
+          <div class="num">2–3x</div>
+          <div class="label">Bystander CPR can double or triple survival chances.</div>
+        </div>
+        <div class="vital">
+          <div class="num">70%</div>
+          <div class="label">of cardiac arrests happen at home — your loved one could need your help.</div>
+        </div>
+        <div class="vital">
+          <div class="num">60%+</div>
+          <div class="label">of Americans say they don't know what to do in a cardiac emergency.<br><small>(Source: AHA, CDC, 2023)</small></div>
+        </div>
+        <div class="vital">
+          <div class="num">330+</div>
+          <div class="label">people trained in Hands-Only CPR by the Push to Save initiative.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTERS -->
+  <section id="chapters" style="display:none;">
+    <p class="kicker">Get involved</p>
+    <h2>Chapters</h2>
+    <p>Want to start a <strong>Push to Save</strong> chapter in your school, college, or community? We'll help you get started.</p>
+    <div class="chapter-cards">
+      <div class="chapter-card">
+        <span class="school">Whitney Young Magnet High School</span>
+        <a href="mailto:lmanadan@cps.edu">Leena Manadan →</a>
+      </div>
+      <div class="chapter-card">
+        <span class="school">Swarthmore College</span>
+        <a href="mailto:jmanada1@swarthmore.edu">Jay Manadan →</a>
+      </div>
+      <div class="chapter-card">
+        <span class="school">The University of Chicago</span>
+        <a href="mailto:abdonv@uchicago.edu">Abdon Valenciana →</a>
+      </div>
+      <div class="chapter-card">
+        <span class="school">Your school or club</span>
+        Start a chapter!
+      </div>
+    </div>
+    <div class="start-box">
+      <b>How to start:</b> Email us with your name, location, and why you want to bring lifesaving CPR education to your community.
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="display:none;">
+    <p class="kicker">Reach out</p>
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>
+        <b>Founder &amp; Leader:</b> Jay Manadan<br>
+        <b>Email:</b> <a href="mailto:jmanada1@swarthmore.edu">jmanada1@swarthmore.edu</a><br>
+        <b>Instagram:</b> <a href="https://www.instagram.com/push.tosave/?hl=en" target="_blank">@push.tosave</a>
+      </p>
+      <p>Want to host a free training, partner with us, or start a chapter? Reach out — we'd love to work with you.</p>
+      <img src="https://github.com/JayMan29/pushtosave/blob/main/Leena%20Manadan.png?raw=true" class="contact-photo" alt="Leena Manadan">
+    </div>
+  </section>
+
 </main>
-<footer>
-    &copy; 2025 Push to Save – Hands-Only CPR Campaign. All rights reserved.
-</footer>
+
+<footer>&copy; 2026 Push to Save — Hands-Only CPR Campaign. All rights reserved.</footer>
+
 </body>
 </html>
