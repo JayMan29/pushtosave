@@ -1191,7 +1191,7 @@ h2 em {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(35px, 7vw, 95px);
-  align-items: center;
+  align-items: start;
 }
 .profile-photo {
   margin: 0;
@@ -1290,6 +1290,10 @@ h2 em {
 @media (max-width: 600px) {
   .profile-hero {
     padding-block: 38px 65px;
+  }
+  .profile-photo img {
+    aspect-ratio: 1 / 1;
+    object-position: center 50%;
   }
   .profile-back {
     margin-bottom: 18px;
