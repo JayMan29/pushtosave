@@ -1202,6 +1202,7 @@ h2 em {
 }
 .profile-photo img {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center 30%;
