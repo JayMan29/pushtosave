@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.pushtosavelives.org/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <image:image>
+      <image:loc>https://www.pushtosavelives.org/images/jay-manadan-hands-only-cpr-807.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pushtosavelives.org/images/jay-manadan-teaching-cpr-814.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pushtosavelives.org/images/leena-manadan-cpr-training-808.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pushtosavelives.org/images/jay-manadan-cpr-960.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.pushtosavelives.org/jay-manadan.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <image:image>
+      <image:loc>https://www.pushtosavelives.org/images/jay-manadan-hands-only-cpr-807.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.pushtosavelives.org/leena-manadan.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <image:image>
+      <image:loc>https://www.pushtosavelives.org/images/leena-manadan-cpr-training-808.webp</image:loc>
+    </image:image>
+  </url>
+</urlset>
