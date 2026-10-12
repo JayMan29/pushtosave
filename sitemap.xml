@@ -3,17 +3,32 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.pushtosavelives.org/</loc>
+    <lastmod>2026-10-12</lastmod>
     <image:image>
-      <image:loc>https://www.pushtosavelives.org/Jay%20Manadan%20Hands-Only%20CPR.png</image:loc>
+      <image:loc>https://www.pushtosavelives.org/images/jay-manadan-hands-only-cpr-807.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.pushtosavelives.org/Jay%20Manadan%20Teaching%20CPR.png</image:loc>
+      <image:loc>https://www.pushtosavelives.org/images/jay-manadan-teaching-cpr-814.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.pushtosavelives.org/Jay%20Manadan%20CPR.png</image:loc>
+      <image:loc>https://www.pushtosavelives.org/images/leena-manadan-cpr-training-808.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.pushtosavelives.org/Leena%20Manadan.png</image:loc>
+      <image:loc>https://www.pushtosavelives.org/images/jay-manadan-cpr-960.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.pushtosavelives.org/jay-manadan.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <image:image>
+      <image:loc>https://www.pushtosavelives.org/images/jay-manadan-hands-only-cpr-807.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.pushtosavelives.org/leena-manadan.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <image:image>
+      <image:loc>https://www.pushtosavelives.org/images/leena-manadan-cpr-training-808.webp</image:loc>
     </image:image>
   </url>
 </urlset>
