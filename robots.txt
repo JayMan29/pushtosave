@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.pushtosavelives.org/sitemap.xml
+Sitemap: https://www.pushtosavelives.org/sitemap-2026-10-12.xml
